@@ -2,6 +2,7 @@ package kr.co.hellospring;
 
 import kr.co.hellospring.discount.DiscountPolicy;
 import kr.co.hellospring.discount.FixDiscountPolicy;
+import kr.co.hellospring.discount.RateDiscountPolicy;
 import kr.co.hellospring.member.MemberRepository;
 import kr.co.hellospring.member.MemberService;
 import kr.co.hellospring.member.MemberServiceImpl;
@@ -26,6 +27,6 @@ public class AppConfig {
     }
 
     public DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
