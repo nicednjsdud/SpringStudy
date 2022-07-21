@@ -1,11 +1,8 @@
 package kr.co.hellospring.order;
 
 import kr.co.hellospring.discount.DiscountPolicy;
-import kr.co.hellospring.discount.FixDiscountPolicy;
-import kr.co.hellospring.discount.RateDiscountPolicy;
 import kr.co.hellospring.member.Member;
 import kr.co.hellospring.member.MemberRepository;
-import kr.co.hellospring.member.MemoryMemberRepsitory;
 
 public class OrderServiceImpl implements OrderService {
 
