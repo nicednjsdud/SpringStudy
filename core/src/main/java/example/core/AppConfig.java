@@ -1,5 +1,6 @@
 package example.core;
 
+import example.core.discount.DiscountPolicy;
 import example.core.discount.FixDiscountPolicy;
 import example.core.member.MemberService;
 import example.core.member.MemberServiceImpl;
@@ -10,11 +11,19 @@ import example.core.order.OrderServiceImpl;
 public class AppConfig {
 
     public MemberService memberService() {
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(memberRepository());
+    }
+
+    private MemoryMemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(memberRepository(), discountPolicy());
+    }
+
+    private DiscountPolicy discountPolicy() {
+        return new FixDiscountPolicy();
     }
 
 
