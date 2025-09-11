@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class CallServiceV2 {
-    
+
     private final ObjectProvider<CallServiceV2> callServiceProvider;
 
     public CallServiceV2(@Lazy ObjectProvider<CallServiceV2> callServiceProvider) {
